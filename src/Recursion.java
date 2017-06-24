@@ -3,17 +3,31 @@
  */
 public class Recursion
 {
-    public static long factorial(long number)
+    public static void moving(int spaces)
     {
-        if (number <= 1)
-            return 1;
-        else
-            return number * factorial(number - 1);
+        do {
+
+                if (spaces <= 1)
+                System.out.printf("The total number of spaces is: %d and will increase until it reaches 100", spaces);
+                else
+                {
+                    for(int counter = 0; counter <= spaces; counter++)
+                        System.out.print(" ");
+
+                    moving(spaces + 1);
+
+                }
+
+
+        } while (spaces <= 1);
+
     }
 
     public static void main(String[] args)
     {
-        for (int counter = 0; counter <= 21; counter++)
-            System.out.printf("%d! = %d%n", counter, factorial(counter));
+
+        moving(1);
+//        for (int counter = 0; counter <= 21; counter++)
+//            System.out.printf("%d! = %d%n", counter, factorial(counter));
     }
 }
