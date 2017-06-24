@@ -5,29 +5,29 @@ public class Recursion
 {
     public static void moving(int spaces)
     {
-        do {
+//        determines how many time the method will run
+        if(spaces <= 100)
+        {
+//            prints the spaces before the sentence
+            for(int counter = 0; counter <= spaces; counter++)
+                System.out.print(" ");
+//            prints the sentence
+            System.out.printf("There are %d spaces before this sentence%n", spaces);
 
-                if (spaces <= 1)
-                System.out.printf("The total number of spaces is: %d and will increase until it reaches 100", spaces);
-                else
-                {
-                    for(int counter = 0; counter <= spaces; counter++)
-                        System.out.print(" ");
+//            increments the total spaces and calls the method
 
-                    moving(spaces + 1);
-
-                }
-
-
-        } while (spaces <= 1);
+            moving(spaces + 1);
+        }
 
     }
 
     public static void main(String[] args)
     {
+        System.out.println("Calling this method only once will result in 100 lines being printed");
 
-        moving(1);
-//        for (int counter = 0; counter <= 21; counter++)
-//            System.out.printf("%d! = %d%n", counter, factorial(counter));
+//        recursive method called
+        
+        moving(0);
+
     }
 }
